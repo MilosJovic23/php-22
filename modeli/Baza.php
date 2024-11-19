@@ -14,4 +14,7 @@
 
             $this->sql=mysqli_connect($this->host,$this->user,$this->pass,$this->database);
         }
+
+
+
     }
