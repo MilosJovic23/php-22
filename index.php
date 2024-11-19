@@ -6,9 +6,14 @@
 
     require_once "modeli/Korisnik.php";
 
-    $ime = "testSql@test.com";
+    $email = "testiranjeReg@test.com";
     $sifra = "123456";
 
     $noviKorisnik = new Korisnik();
-    $noviKorisnik->register( $ime,$sifra );
 
+    if ( $noviKorisnik->userExists( $email ) ) {
+        echo "postoji korisnik";
+
+    } else {
+        $noviKorisnik->register( $email,$sifra );
+    }
