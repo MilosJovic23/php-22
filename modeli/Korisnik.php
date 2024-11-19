@@ -5,6 +5,12 @@
     class Korisnik  extends Baza {
 
 
+        private $name;
+
+        public function setName($newName) {
+            $this->name = $newName;
+            return $ucFirst  = ucfirst($this->name);
+        }
 
         public function register($email, $sifra) {
 

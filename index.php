@@ -9,7 +9,10 @@
     $email = "testiranjeReg@test.com";
     $sifra = "123456";
 
+
     $noviKorisnik = new Korisnik();
+
+    echo $noviKorisnik->setName("milos");
 
     if ( $noviKorisnik->userExists( $email ) ) {
         echo "postoji korisnik";
