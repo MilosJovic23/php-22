@@ -8,11 +8,21 @@
 
         public function register($email, $sifra) {
 
-            $baza = $this->sql;
-            $email= mysqli_real_escape_string($baza,$email);
+            $email= mysqli_real_escape_string($this->sql,$email);
             $sifra = password_hash($sifra, PASSWORD_BCRYPT );
 
-            $baza->query("INSERT INTO korisnici(email,sifra) VALUES ('$email','$sifra')");
+            $this->sql->query("INSERT INTO korisnici(email,sifra) VALUES ('$email','$sifra')");
             echo "uspesno smo registrovali korisnika u bazu";
+
         }
+
+        public function userExists($email){
+
+            $email= mysqli_real_escape_string($this->sql,$email);
+            $result = $this->sql->query("SELECT * FROM korisnici WHERE email='$email'");
+
+            return $result->num_rows > 0;
+
+        }
+
     }
