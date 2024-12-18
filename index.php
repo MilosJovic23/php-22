@@ -2,7 +2,6 @@
 
 <?php
 
-
     require_once "modeli/Korisnik.php";
 
     $email = "milosh23@hotmail.com";
